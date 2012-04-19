@@ -10,14 +10,13 @@ PhenotypeOG.prototype.generateAxioms = function () {
     this.initObjectPropertyMap(this);
 
     this.g_abnormal_X_morphology();
+    this.g_abnormal_X_quantities();
 }
 
 // move to superclass?
 PhenotypeOG.prototype.allAnatomicalEntity = function() {
     return this.allSubClassesOf('anatomical entity');
 }
-//PhenotypeOG.prototype.hasPart = function() { return this.makeObjectProperty("has part") }
-//PhenotypeOG.prototype.hasQuality = function() { return this.makeObjectProperty("has quality") }
 
 PhenotypeOG.prototype.g_abnormal_X_morphology = function() {
     var anats = this.allAnatomicalEntity();
@@ -25,42 +24,35 @@ PhenotypeOG.prototype.g_abnormal_X_morphology = function() {
     for (var a in anats) {
         this.info("Anat: "+anats[a]);
         this.gen(['abnormal',anats[a],'morphology'],
-                 this.someValuesFrom(this.hasPart(),
-                                     this.pairwiseIntersectionOf(anats[a],
-                                                                 this.someValuesFrom(this.hasQuality(),m))));
-                                                                 
+                 this.x_EQ(anats[a], m));
     }
 }
 
-/*
-function g_abnormal_X_size() {
-    var anats = l_anat();
-    for (a in anats) {
-        for (size in l_size()) {
-            gen(['abnormal',anats,'morphology'],
-                someValuesFrom(hasPart(),
-                               pairwiseIntersectionOf(a,someValuesFrom(hasQuality(),m))));
-        }
-    }
-}
-*/
-
-
-/*
-
-
-function get_label_from_tokens(tokens) {
-    for (i=0; i<tokens.length; i++) {
-        var token = tokens[i];
-        var labelPart = token;
-        if (typeof token != "string")  {
-            //
+PhenotypeOG.prototype.g_abnormal_X_quantities = function() {
+    var anats = this.allAnatomicalEntity();
+    var quants = ["size", "weight"];
+    var changes = ["increased", "decreased"];
+    for (var ai in anats) {
+        var a = anats[ai];
+        for (var qi in quants) {
+            var q = quants[qi];
+            for (ci in changes) {
+                var change = changes[ci];
+                var qclass = this.lookup(change+" "+q);
+                this.gen([change,a,q],
+                         this.x_EQ(a, qclass));
+            }
         }
     }
 }
 
+PhenotypeOG.prototype.x_EQ = function(e,q) {
+    return this.someValuesFrom(this.hasPart(),
+                               this.pairwiseIntersectionOf(e,
+                                                           this.someValuesFrom(this.hasQuality(),
+                                                                               q)));
+}
 
-*/
 
 function t() {
     x("ontologies/caro.owl ontologies/pato.owl --reasoner elk");
