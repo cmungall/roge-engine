@@ -18,6 +18,9 @@ PhenotypeOG.prototype.allAnatomicalEntity = function() {
     return this.allSubClassesOf('anatomical entity');
 }
 
+// MAIN GRAMMAR
+
+// abnormal {A} morphology
 PhenotypeOG.prototype.g_abnormal_X_morphology = function() {
     var anats = this.allAnatomicalEntity();
     var m = this.lookup('morphology');
@@ -28,6 +31,7 @@ PhenotypeOG.prototype.g_abnormal_X_morphology = function() {
     }
 }
 
+// {increased,decreased} A {size,wight,...}
 PhenotypeOG.prototype.g_abnormal_X_quantities = function() {
     var anats = this.allAnatomicalEntity();
     var quants = ["size", "weight"];
