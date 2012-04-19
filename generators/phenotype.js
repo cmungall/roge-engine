@@ -1,22 +1,23 @@
 function PhenotypeOG(g) {
     OntologyGenerator.call(this, g);
+    this.objectPropertyMap = 
+        {hasPart : "has part",
+         hasQuality : "has quality"};
 }
 PhenotypeOG.prototype = new OntologyGenerator(null);
 
 PhenotypeOG.prototype.generateAxioms = function () {
-    this.g_abnormal_X_morphology();
+    this.initObjectPropertyMap(this);
 
+    this.g_abnormal_X_morphology();
 }
 
 // move to superclass?
 PhenotypeOG.prototype.allAnatomicalEntity = function() {
-    var root = this.lookup('anatomical entity');
-    this.info("ROOT AE:"+root);
-    return this.getReasoner().getSubClasses(root, false).getFlattened().toArray();
+    return this.allSubClassesOf('anatomical entity');
 }
-PhenotypeOG.prototype.hasPart = function() { return this.makeObjectProperty("has part") }
-PhenotypeOG.prototype.hasQuality = function() { return this.makeObjectProperty("has quality") }
-
+//PhenotypeOG.prototype.hasPart = function() { return this.makeObjectProperty("has part") }
+//PhenotypeOG.prototype.hasQuality = function() { return this.makeObjectProperty("has quality") }
 
 PhenotypeOG.prototype.g_abnormal_X_morphology = function() {
     var anats = this.allAnatomicalEntity();
@@ -65,4 +66,5 @@ function t() {
     x("ontologies/caro.owl ontologies/pato.owl --reasoner elk");
     pog = new PhenotypeOG(g());
     pog.generateOntology();
+    pog.saveOntology("out/t.owl");
 }

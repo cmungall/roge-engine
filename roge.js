@@ -1,19 +1,44 @@
-// ROOT CLASS
+importPackage(java.io);
+importPackage(Packages.org.semanticweb.owlapi.model);
+importPackage(Packages.org.semanticweb.owlapi.io);
+importPackage(Packages.owltools.cli);
+importPackage(Packages.owltools.io);
+importPackage(Packages.owltools.mooncat);
+importPackage(Packages.owltools.graph);
+importPackage(Packages.org.obolibrary.macro);
+importPackage(Packages.com.google.gson);
+
+
 
 function OntologyGenerator(g) {
     this.graph = g;
     this.newOntology = null;
     this.nextId = 0;
+    this.saveFormat = new OWLFunctionalSyntaxOntologyFormat();
 }
 OntologyGenerator.prototype.getNextId = function() {
     this.nextId++;
     return this.nextId;
+}
+OntologyGenerator.prototype.initObjectPropertyMap = function(obj) {
+    function mkFunc(label) {
+        return function() { return obj.makeObjectProperty(label) };
+    }
+    var pmap = obj.objectPropertyMap;
+    for (var p in pmap) {
+        this.info(p+ " --> "+pmap[p]+" "+obj);
+        obj[p] = mkFunc(pmap[p]);
+    }
 }
 OntologyGenerator.prototype.info = function(msg) {
     print(msg);
 }
 OntologyGenerator.prototype.getReasoner = function() {
     return this.graph.getReasoner();
+}
+OntologyGenerator.prototype.allSubClassesOf = function(rootLabel) {
+    var root = this.lookup(rootLabel);
+    return this.getReasoner().getSubClasses(root, false).getFlattened().toArray();
 }
 
 OntologyGenerator.prototype.getDataFactory = function() {
@@ -25,8 +50,23 @@ OntologyGenerator.prototype.getManager = function() {
 
 OntologyGenerator.prototype.generateOntology = function() {
     this.newOntology = this.getManager().createOntology();
+    var importList = this.graph.getAllOntologies().toArray();
+    for (i in importList) {
+        var ai = new AddImport(this.newOntology, this.getDataFactory().getOWLImportsDeclaration(importList[i].getOntologyID().getOntologyIRI()));
+        this.getManager().applyChange(ai);
+    }
     this.generateAxioms();
+    // todo - classify - if asked
 }
+
+OntologyGenerator.prototype.saveOntology = function(path) {
+    var file = new File(path);
+    this.getManager().saveOntology(this.newOntology,
+                                   this.saveFormat,
+                                   IRI.create(file.getCanonicalFile()));
+                                   
+}
+
 OntologyGenerator.prototype.addAxiom = function(ax) {
     this.info("AX:"+ax);
     this.getManager().addAxiom(this.newOntology, ax);
