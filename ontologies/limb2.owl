@@ -1,0 +1,730 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl 'http://www.w3.org/2002/07/owl#'>
+    <!ENTITY rdf 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+    <!ENTITY rdfs 'http://www.w3.org/2000/01/rdf-schema#'>
+    <!ENTITY xsd 'http://www.w3.org/2001/XMLSchema#'>
+]>
+
+<rdf:RDF
+    xmlns:owl="&owl;"
+    xmlns:rdf="&rdf;"
+    xmlns:rdfs="&rdfs;"
+    xmlns:xsd="&xsd;"
+>
+<owl:Ontology rdf:about="http://x.org"/>
+
+<owl:Class rdf:about="http://x.org#stylopod">
+  <rdfs:label xml:lang="en">stylopod</rdfs:label>
+  <rdfs:subClassOf rdf:resource="http://x.org#limb_segment"/>
+</owl:Class>
+
+<owl:Class rdf:about="http://x.org#zeugopod">
+  <rdfs:label xml:lang="en">zeugopod</rdfs:label>
+  <rdfs:subClassOf rdf:resource="http://x.org#limb_segment"/>
+</owl:Class>
+
+<owl:Class rdf:about="http://x.org#autopod">
+  <rdfs:label xml:lang="en">autopod</rdfs:label>
+  <rdfs:subClassOf rdf:resource="http://x.org#limb_segment"/>
+</owl:Class>
+
+<owl:Class rdf:about="http://x.org#left">
+  <rdfs:label xml:lang="en">left</rdfs:label>
+  <rdfs:subClassOf rdf:resource="http://x.org#laterality"/>
+</owl:Class>
+
+<owl:Class rdf:about="http://x.org#right">
+  <rdfs:label xml:lang="en">right</rdfs:label>
+  <rdfs:subClassOf rdf:resource="http://x.org#laterality"/>
+</owl:Class>
+
+<owl:Class rdf:about="http://x.org#anterior">
+  <rdfs:label xml:lang="en">anterior</rdfs:label>
+  <rdfs:subClassOf rdf:resource="http://x.org#anterioposterior"/>
+</owl:Class>
+
+<owl:Class rdf:about="http://x.org#posterior">
+  <rdfs:label xml:lang="en">posterior</rdfs:label>
+  <rdfs:subClassOf rdf:resource="http://x.org#anterioposterior"/>
+</owl:Class>
+
+<owl:Class rdf:about="http://x.org#limb_segment">
+  <rdfs:label xml:lang="en">limb_segment</rdfs:label>
+  <rdfs:subClassOf rdf:resource="http://x.org#limb_unit"/>
+</owl:Class>
+
+<owl:Class rdf:about="http://x.org#limb">
+  <rdfs:label xml:lang="en">limb</rdfs:label>
+  <rdfs:subClassOf rdf:resource="http://x.org#limb_unit"/>
+</owl:Class>
+
+<owl:Class rdf:about="http://x.org#left-anterior-limb-stylopod">
+  <rdfs:label rdf:datatype="&xsd;string">left anterior limb stylopod</rdfs:label>
+</owl:Class>
+
+<owl:Class>
+  <owl:equivalentClass rdf:resource="http://x.org#left-anterior-limb-stylopod"/>
+  <owl:intersectionOf rdf:parseType="Collection">
+
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://x.org#part_of"/>
+      <owl:someValuesFrom>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://x.org#left"/>
+            <rdf:Description rdf:about="http://x.org#anterior"/>
+            <rdf:Description rdf:about="http://x.org#limb"/>
+          </owl:intersectionOf>
+        </owl:Class>
+      </owl:someValuesFrom>
+    </owl:Restriction>
+    <rdf:Description rdf:about="http://x.org#stylopod"/>
+  </owl:intersectionOf>
+</owl:Class>
+
+<owl:Class rdf:about="http://x.org#left-posterior-limb-stylopod">
+  <rdfs:label rdf:datatype="&xsd;string">left posterior limb stylopod</rdfs:label>
+</owl:Class>
+
+<owl:Class>
+  <owl:equivalentClass rdf:resource="http://x.org#left-posterior-limb-stylopod"/>
+  <owl:intersectionOf rdf:parseType="Collection">
+
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://x.org#part_of"/>
+      <owl:someValuesFrom>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://x.org#left"/>
+            <rdf:Description rdf:about="http://x.org#posterior"/>
+            <rdf:Description rdf:about="http://x.org#limb"/>
+          </owl:intersectionOf>
+        </owl:Class>
+      </owl:someValuesFrom>
+    </owl:Restriction>
+    <rdf:Description rdf:about="http://x.org#stylopod"/>
+  </owl:intersectionOf>
+</owl:Class>
+
+<owl:Class rdf:about="http://x.org#left-limb-stylopod">
+  <rdfs:label rdf:datatype="&xsd;string">left limb stylopod</rdfs:label>
+</owl:Class>
+
+<owl:Class>
+  <owl:equivalentClass rdf:resource="http://x.org#left-limb-stylopod"/>
+  <owl:intersectionOf rdf:parseType="Collection">
+
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://x.org#part_of"/>
+      <owl:someValuesFrom>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://x.org#left"/>
+            <rdf:Description rdf:about="http://x.org#thing"/>
+            <rdf:Description rdf:about="http://x.org#limb"/>
+          </owl:intersectionOf>
+        </owl:Class>
+      </owl:someValuesFrom>
+    </owl:Restriction>
+    <rdf:Description rdf:about="http://x.org#stylopod"/>
+  </owl:intersectionOf>
+</owl:Class>
+
+<owl:Class rdf:about="http://x.org#right-anterior-limb-stylopod">
+  <rdfs:label rdf:datatype="&xsd;string">right anterior limb stylopod</rdfs:label>
+</owl:Class>
+
+<owl:Class>
+  <owl:equivalentClass rdf:resource="http://x.org#right-anterior-limb-stylopod"/>
+  <owl:intersectionOf rdf:parseType="Collection">
+
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://x.org#part_of"/>
+      <owl:someValuesFrom>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://x.org#right"/>
+            <rdf:Description rdf:about="http://x.org#anterior"/>
+            <rdf:Description rdf:about="http://x.org#limb"/>
+          </owl:intersectionOf>
+        </owl:Class>
+      </owl:someValuesFrom>
+    </owl:Restriction>
+    <rdf:Description rdf:about="http://x.org#stylopod"/>
+  </owl:intersectionOf>
+</owl:Class>
+
+<owl:Class rdf:about="http://x.org#right-posterior-limb-stylopod">
+  <rdfs:label rdf:datatype="&xsd;string">right posterior limb stylopod</rdfs:label>
+</owl:Class>
+
+<owl:Class>
+  <owl:equivalentClass rdf:resource="http://x.org#right-posterior-limb-stylopod"/>
+  <owl:intersectionOf rdf:parseType="Collection">
+
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://x.org#part_of"/>
+      <owl:someValuesFrom>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://x.org#right"/>
+            <rdf:Description rdf:about="http://x.org#posterior"/>
+            <rdf:Description rdf:about="http://x.org#limb"/>
+          </owl:intersectionOf>
+        </owl:Class>
+      </owl:someValuesFrom>
+    </owl:Restriction>
+    <rdf:Description rdf:about="http://x.org#stylopod"/>
+  </owl:intersectionOf>
+</owl:Class>
+
+<owl:Class rdf:about="http://x.org#right-limb-stylopod">
+  <rdfs:label rdf:datatype="&xsd;string">right limb stylopod</rdfs:label>
+</owl:Class>
+
+<owl:Class>
+  <owl:equivalentClass rdf:resource="http://x.org#right-limb-stylopod"/>
+  <owl:intersectionOf rdf:parseType="Collection">
+
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://x.org#part_of"/>
+      <owl:someValuesFrom>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://x.org#right"/>
+            <rdf:Description rdf:about="http://x.org#thing"/>
+            <rdf:Description rdf:about="http://x.org#limb"/>
+          </owl:intersectionOf>
+        </owl:Class>
+      </owl:someValuesFrom>
+    </owl:Restriction>
+    <rdf:Description rdf:about="http://x.org#stylopod"/>
+  </owl:intersectionOf>
+</owl:Class>
+
+<owl:Class rdf:about="http://x.org#anterior-limb-stylopod">
+  <rdfs:label rdf:datatype="&xsd;string">anterior limb stylopod</rdfs:label>
+</owl:Class>
+
+<owl:Class>
+  <owl:equivalentClass rdf:resource="http://x.org#anterior-limb-stylopod"/>
+  <owl:intersectionOf rdf:parseType="Collection">
+
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://x.org#part_of"/>
+      <owl:someValuesFrom>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://x.org#thing"/>
+            <rdf:Description rdf:about="http://x.org#anterior"/>
+            <rdf:Description rdf:about="http://x.org#limb"/>
+          </owl:intersectionOf>
+        </owl:Class>
+      </owl:someValuesFrom>
+    </owl:Restriction>
+    <rdf:Description rdf:about="http://x.org#stylopod"/>
+  </owl:intersectionOf>
+</owl:Class>
+
+<owl:Class rdf:about="http://x.org#posterior-limb-stylopod">
+  <rdfs:label rdf:datatype="&xsd;string">posterior limb stylopod</rdfs:label>
+</owl:Class>
+
+<owl:Class>
+  <owl:equivalentClass rdf:resource="http://x.org#posterior-limb-stylopod"/>
+  <owl:intersectionOf rdf:parseType="Collection">
+
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://x.org#part_of"/>
+      <owl:someValuesFrom>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://x.org#thing"/>
+            <rdf:Description rdf:about="http://x.org#posterior"/>
+            <rdf:Description rdf:about="http://x.org#limb"/>
+          </owl:intersectionOf>
+        </owl:Class>
+      </owl:someValuesFrom>
+    </owl:Restriction>
+    <rdf:Description rdf:about="http://x.org#stylopod"/>
+  </owl:intersectionOf>
+</owl:Class>
+
+<owl:Class rdf:about="http://x.org#limb-stylopod">
+  <rdfs:label rdf:datatype="&xsd;string">limb stylopod</rdfs:label>
+</owl:Class>
+
+<owl:Class>
+  <owl:equivalentClass rdf:resource="http://x.org#limb-stylopod"/>
+  <owl:intersectionOf rdf:parseType="Collection">
+
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://x.org#part_of"/>
+      <owl:someValuesFrom>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://x.org#thing"/>
+            <rdf:Description rdf:about="http://x.org#thing"/>
+            <rdf:Description rdf:about="http://x.org#limb"/>
+          </owl:intersectionOf>
+        </owl:Class>
+      </owl:someValuesFrom>
+    </owl:Restriction>
+    <rdf:Description rdf:about="http://x.org#stylopod"/>
+  </owl:intersectionOf>
+</owl:Class>
+
+<owl:Class rdf:about="http://x.org#left-anterior-limb-zeugopod">
+  <rdfs:label rdf:datatype="&xsd;string">left anterior limb zeugopod</rdfs:label>
+</owl:Class>
+
+<owl:Class>
+  <owl:equivalentClass rdf:resource="http://x.org#left-anterior-limb-zeugopod"/>
+  <owl:intersectionOf rdf:parseType="Collection">
+
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://x.org#part_of"/>
+      <owl:someValuesFrom>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://x.org#left"/>
+            <rdf:Description rdf:about="http://x.org#anterior"/>
+            <rdf:Description rdf:about="http://x.org#limb"/>
+          </owl:intersectionOf>
+        </owl:Class>
+      </owl:someValuesFrom>
+    </owl:Restriction>
+    <rdf:Description rdf:about="http://x.org#zeugopod"/>
+  </owl:intersectionOf>
+</owl:Class>
+
+<owl:Class rdf:about="http://x.org#left-posterior-limb-zeugopod">
+  <rdfs:label rdf:datatype="&xsd;string">left posterior limb zeugopod</rdfs:label>
+</owl:Class>
+
+<owl:Class>
+  <owl:equivalentClass rdf:resource="http://x.org#left-posterior-limb-zeugopod"/>
+  <owl:intersectionOf rdf:parseType="Collection">
+
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://x.org#part_of"/>
+      <owl:someValuesFrom>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://x.org#left"/>
+            <rdf:Description rdf:about="http://x.org#posterior"/>
+            <rdf:Description rdf:about="http://x.org#limb"/>
+          </owl:intersectionOf>
+        </owl:Class>
+      </owl:someValuesFrom>
+    </owl:Restriction>
+    <rdf:Description rdf:about="http://x.org#zeugopod"/>
+  </owl:intersectionOf>
+</owl:Class>
+
+<owl:Class rdf:about="http://x.org#left-limb-zeugopod">
+  <rdfs:label rdf:datatype="&xsd;string">left limb zeugopod</rdfs:label>
+</owl:Class>
+
+<owl:Class>
+  <owl:equivalentClass rdf:resource="http://x.org#left-limb-zeugopod"/>
+  <owl:intersectionOf rdf:parseType="Collection">
+
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://x.org#part_of"/>
+      <owl:someValuesFrom>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://x.org#left"/>
+            <rdf:Description rdf:about="http://x.org#thing"/>
+            <rdf:Description rdf:about="http://x.org#limb"/>
+          </owl:intersectionOf>
+        </owl:Class>
+      </owl:someValuesFrom>
+    </owl:Restriction>
+    <rdf:Description rdf:about="http://x.org#zeugopod"/>
+  </owl:intersectionOf>
+</owl:Class>
+
+<owl:Class rdf:about="http://x.org#right-anterior-limb-zeugopod">
+  <rdfs:label rdf:datatype="&xsd;string">right anterior limb zeugopod</rdfs:label>
+</owl:Class>
+
+<owl:Class>
+  <owl:equivalentClass rdf:resource="http://x.org#right-anterior-limb-zeugopod"/>
+  <owl:intersectionOf rdf:parseType="Collection">
+
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://x.org#part_of"/>
+      <owl:someValuesFrom>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://x.org#right"/>
+            <rdf:Description rdf:about="http://x.org#anterior"/>
+            <rdf:Description rdf:about="http://x.org#limb"/>
+          </owl:intersectionOf>
+        </owl:Class>
+      </owl:someValuesFrom>
+    </owl:Restriction>
+    <rdf:Description rdf:about="http://x.org#zeugopod"/>
+  </owl:intersectionOf>
+</owl:Class>
+
+<owl:Class rdf:about="http://x.org#right-posterior-limb-zeugopod">
+  <rdfs:label rdf:datatype="&xsd;string">right posterior limb zeugopod</rdfs:label>
+</owl:Class>
+
+<owl:Class>
+  <owl:equivalentClass rdf:resource="http://x.org#right-posterior-limb-zeugopod"/>
+  <owl:intersectionOf rdf:parseType="Collection">
+
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://x.org#part_of"/>
+      <owl:someValuesFrom>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://x.org#right"/>
+            <rdf:Description rdf:about="http://x.org#posterior"/>
+            <rdf:Description rdf:about="http://x.org#limb"/>
+          </owl:intersectionOf>
+        </owl:Class>
+      </owl:someValuesFrom>
+    </owl:Restriction>
+    <rdf:Description rdf:about="http://x.org#zeugopod"/>
+  </owl:intersectionOf>
+</owl:Class>
+
+<owl:Class rdf:about="http://x.org#right-limb-zeugopod">
+  <rdfs:label rdf:datatype="&xsd;string">right limb zeugopod</rdfs:label>
+</owl:Class>
+
+<owl:Class>
+  <owl:equivalentClass rdf:resource="http://x.org#right-limb-zeugopod"/>
+  <owl:intersectionOf rdf:parseType="Collection">
+
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://x.org#part_of"/>
+      <owl:someValuesFrom>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://x.org#right"/>
+            <rdf:Description rdf:about="http://x.org#thing"/>
+            <rdf:Description rdf:about="http://x.org#limb"/>
+          </owl:intersectionOf>
+        </owl:Class>
+      </owl:someValuesFrom>
+    </owl:Restriction>
+    <rdf:Description rdf:about="http://x.org#zeugopod"/>
+  </owl:intersectionOf>
+</owl:Class>
+
+<owl:Class rdf:about="http://x.org#anterior-limb-zeugopod">
+  <rdfs:label rdf:datatype="&xsd;string">anterior limb zeugopod</rdfs:label>
+</owl:Class>
+
+<owl:Class>
+  <owl:equivalentClass rdf:resource="http://x.org#anterior-limb-zeugopod"/>
+  <owl:intersectionOf rdf:parseType="Collection">
+
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://x.org#part_of"/>
+      <owl:someValuesFrom>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://x.org#thing"/>
+            <rdf:Description rdf:about="http://x.org#anterior"/>
+            <rdf:Description rdf:about="http://x.org#limb"/>
+          </owl:intersectionOf>
+        </owl:Class>
+      </owl:someValuesFrom>
+    </owl:Restriction>
+    <rdf:Description rdf:about="http://x.org#zeugopod"/>
+  </owl:intersectionOf>
+</owl:Class>
+
+<owl:Class rdf:about="http://x.org#posterior-limb-zeugopod">
+  <rdfs:label rdf:datatype="&xsd;string">posterior limb zeugopod</rdfs:label>
+</owl:Class>
+
+<owl:Class>
+  <owl:equivalentClass rdf:resource="http://x.org#posterior-limb-zeugopod"/>
+  <owl:intersectionOf rdf:parseType="Collection">
+
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://x.org#part_of"/>
+      <owl:someValuesFrom>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://x.org#thing"/>
+            <rdf:Description rdf:about="http://x.org#posterior"/>
+            <rdf:Description rdf:about="http://x.org#limb"/>
+          </owl:intersectionOf>
+        </owl:Class>
+      </owl:someValuesFrom>
+    </owl:Restriction>
+    <rdf:Description rdf:about="http://x.org#zeugopod"/>
+  </owl:intersectionOf>
+</owl:Class>
+
+<owl:Class rdf:about="http://x.org#limb-zeugopod">
+  <rdfs:label rdf:datatype="&xsd;string">limb zeugopod</rdfs:label>
+</owl:Class>
+
+<owl:Class>
+  <owl:equivalentClass rdf:resource="http://x.org#limb-zeugopod"/>
+  <owl:intersectionOf rdf:parseType="Collection">
+
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://x.org#part_of"/>
+      <owl:someValuesFrom>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://x.org#thing"/>
+            <rdf:Description rdf:about="http://x.org#thing"/>
+            <rdf:Description rdf:about="http://x.org#limb"/>
+          </owl:intersectionOf>
+        </owl:Class>
+      </owl:someValuesFrom>
+    </owl:Restriction>
+    <rdf:Description rdf:about="http://x.org#zeugopod"/>
+  </owl:intersectionOf>
+</owl:Class>
+
+<owl:Class rdf:about="http://x.org#left-anterior-limb-autopod">
+  <rdfs:label rdf:datatype="&xsd;string">left anterior limb autopod</rdfs:label>
+</owl:Class>
+
+<owl:Class>
+  <owl:equivalentClass rdf:resource="http://x.org#left-anterior-limb-autopod"/>
+  <owl:intersectionOf rdf:parseType="Collection">
+
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://x.org#part_of"/>
+      <owl:someValuesFrom>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://x.org#left"/>
+            <rdf:Description rdf:about="http://x.org#anterior"/>
+            <rdf:Description rdf:about="http://x.org#limb"/>
+          </owl:intersectionOf>
+        </owl:Class>
+      </owl:someValuesFrom>
+    </owl:Restriction>
+    <rdf:Description rdf:about="http://x.org#autopod"/>
+  </owl:intersectionOf>
+</owl:Class>
+
+<owl:Class rdf:about="http://x.org#left-posterior-limb-autopod">
+  <rdfs:label rdf:datatype="&xsd;string">left posterior limb autopod</rdfs:label>
+</owl:Class>
+
+<owl:Class>
+  <owl:equivalentClass rdf:resource="http://x.org#left-posterior-limb-autopod"/>
+  <owl:intersectionOf rdf:parseType="Collection">
+
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://x.org#part_of"/>
+      <owl:someValuesFrom>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://x.org#left"/>
+            <rdf:Description rdf:about="http://x.org#posterior"/>
+            <rdf:Description rdf:about="http://x.org#limb"/>
+          </owl:intersectionOf>
+        </owl:Class>
+      </owl:someValuesFrom>
+    </owl:Restriction>
+    <rdf:Description rdf:about="http://x.org#autopod"/>
+  </owl:intersectionOf>
+</owl:Class>
+
+<owl:Class rdf:about="http://x.org#left-limb-autopod">
+  <rdfs:label rdf:datatype="&xsd;string">left limb autopod</rdfs:label>
+</owl:Class>
+
+<owl:Class>
+  <owl:equivalentClass rdf:resource="http://x.org#left-limb-autopod"/>
+  <owl:intersectionOf rdf:parseType="Collection">
+
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://x.org#part_of"/>
+      <owl:someValuesFrom>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://x.org#left"/>
+            <rdf:Description rdf:about="http://x.org#thing"/>
+            <rdf:Description rdf:about="http://x.org#limb"/>
+          </owl:intersectionOf>
+        </owl:Class>
+      </owl:someValuesFrom>
+    </owl:Restriction>
+    <rdf:Description rdf:about="http://x.org#autopod"/>
+  </owl:intersectionOf>
+</owl:Class>
+
+<owl:Class rdf:about="http://x.org#right-anterior-limb-autopod">
+  <rdfs:label rdf:datatype="&xsd;string">right anterior limb autopod</rdfs:label>
+</owl:Class>
+
+<owl:Class>
+  <owl:equivalentClass rdf:resource="http://x.org#right-anterior-limb-autopod"/>
+  <owl:intersectionOf rdf:parseType="Collection">
+
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://x.org#part_of"/>
+      <owl:someValuesFrom>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://x.org#right"/>
+            <rdf:Description rdf:about="http://x.org#anterior"/>
+            <rdf:Description rdf:about="http://x.org#limb"/>
+          </owl:intersectionOf>
+        </owl:Class>
+      </owl:someValuesFrom>
+    </owl:Restriction>
+    <rdf:Description rdf:about="http://x.org#autopod"/>
+  </owl:intersectionOf>
+</owl:Class>
+
+<owl:Class rdf:about="http://x.org#right-posterior-limb-autopod">
+  <rdfs:label rdf:datatype="&xsd;string">right posterior limb autopod</rdfs:label>
+</owl:Class>
+
+<owl:Class>
+  <owl:equivalentClass rdf:resource="http://x.org#right-posterior-limb-autopod"/>
+  <owl:intersectionOf rdf:parseType="Collection">
+
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://x.org#part_of"/>
+      <owl:someValuesFrom>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://x.org#right"/>
+            <rdf:Description rdf:about="http://x.org#posterior"/>
+            <rdf:Description rdf:about="http://x.org#limb"/>
+          </owl:intersectionOf>
+        </owl:Class>
+      </owl:someValuesFrom>
+    </owl:Restriction>
+    <rdf:Description rdf:about="http://x.org#autopod"/>
+  </owl:intersectionOf>
+</owl:Class>
+
+<owl:Class rdf:about="http://x.org#right-limb-autopod">
+  <rdfs:label rdf:datatype="&xsd;string">right limb autopod</rdfs:label>
+</owl:Class>
+
+<owl:Class>
+  <owl:equivalentClass rdf:resource="http://x.org#right-limb-autopod"/>
+  <owl:intersectionOf rdf:parseType="Collection">
+
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://x.org#part_of"/>
+      <owl:someValuesFrom>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://x.org#right"/>
+            <rdf:Description rdf:about="http://x.org#thing"/>
+            <rdf:Description rdf:about="http://x.org#limb"/>
+          </owl:intersectionOf>
+        </owl:Class>
+      </owl:someValuesFrom>
+    </owl:Restriction>
+    <rdf:Description rdf:about="http://x.org#autopod"/>
+  </owl:intersectionOf>
+</owl:Class>
+
+<owl:Class rdf:about="http://x.org#anterior-limb-autopod">
+  <rdfs:label rdf:datatype="&xsd;string">anterior limb autopod</rdfs:label>
+</owl:Class>
+
+<owl:Class>
+  <owl:equivalentClass rdf:resource="http://x.org#anterior-limb-autopod"/>
+  <owl:intersectionOf rdf:parseType="Collection">
+
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://x.org#part_of"/>
+      <owl:someValuesFrom>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://x.org#thing"/>
+            <rdf:Description rdf:about="http://x.org#anterior"/>
+            <rdf:Description rdf:about="http://x.org#limb"/>
+          </owl:intersectionOf>
+        </owl:Class>
+      </owl:someValuesFrom>
+    </owl:Restriction>
+    <rdf:Description rdf:about="http://x.org#autopod"/>
+  </owl:intersectionOf>
+</owl:Class>
+
+<owl:Class rdf:about="http://x.org#posterior-limb-autopod">
+  <rdfs:label rdf:datatype="&xsd;string">posterior limb autopod</rdfs:label>
+</owl:Class>
+
+<owl:Class>
+  <owl:equivalentClass rdf:resource="http://x.org#posterior-limb-autopod"/>
+  <owl:intersectionOf rdf:parseType="Collection">
+
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://x.org#part_of"/>
+      <owl:someValuesFrom>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://x.org#thing"/>
+            <rdf:Description rdf:about="http://x.org#posterior"/>
+            <rdf:Description rdf:about="http://x.org#limb"/>
+          </owl:intersectionOf>
+        </owl:Class>
+      </owl:someValuesFrom>
+    </owl:Restriction>
+    <rdf:Description rdf:about="http://x.org#autopod"/>
+  </owl:intersectionOf>
+</owl:Class>
+
+<owl:Class rdf:about="http://x.org#limb-autopod">
+  <rdfs:label rdf:datatype="&xsd;string">limb autopod</rdfs:label>
+</owl:Class>
+
+<owl:Class>
+  <owl:equivalentClass rdf:resource="http://x.org#limb-autopod"/>
+  <owl:intersectionOf rdf:parseType="Collection">
+
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://x.org#part_of"/>
+      <owl:someValuesFrom>
+        <owl:Class>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://x.org#thing"/>
+            <rdf:Description rdf:about="http://x.org#thing"/>
+            <rdf:Description rdf:about="http://x.org#limb"/>
+          </owl:intersectionOf>
+        </owl:Class>
+      </owl:someValuesFrom>
+    </owl:Restriction>
+    <rdf:Description rdf:about="http://x.org#autopod"/>
+  </owl:intersectionOf>
+</owl:Class>
+
+<owl:Class rdf:about="http://x.org#laterality">
+  <rdfs:label xml:lang="en">laterality</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="http://x.org#anterioposterior">
+  <rdfs:label xml:lang="en">anterioposterior</rdfs:label>
+</owl:Class>
+
+<owl:Class rdf:about="http://x.org#limb_unit">
+  <rdfs:label xml:lang="en">limb_unit</rdfs:label>
+</owl:Class>
+
+<owl:ObjectProperty rdf:about="http://x.org#part_of">
+  <rdfs:label xml:lang="en">part_of</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:Class rdf:about="http://x.org#thing">
+  <rdfs:label xml:lang="en">thing</rdfs:label>
+</owl:Class>
+
+</rdf:RDF>

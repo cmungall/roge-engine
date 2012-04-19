@@ -1,0 +1,164 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl 'http://www.w3.org/2002/07/owl#'>
+    <!ENTITY rdf 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+    <!ENTITY rdfs 'http://www.w3.org/2000/01/rdf-schema#'>
+    <!ENTITY xsd 'http://www.w3.org/2001/XMLSchema#'>
+]>
+
+<rdf:RDF
+    xmlns:owl="&owl;"
+    xmlns:rdf="&rdf;"
+    xmlns:rdfs="&rdfs;"
+    xmlns:xsd="&xsd;"
+>
+<owl:Ontology rdf:about="htp://x.org"/>
+
+<owl:Class rdf:about="http://x.org#morph">
+  <rdfs:label xml:lang="en">morph</rdfs:label>
+  <rdfs:subClassOf rdf:resource="http://x.org#morphology"/>
+</owl:Class>
+
+<owl:Class rdf:about="http://x.org#multilaminar%20epithelium-morph">
+  <rdfs:label rdf:datatype="&xsd;string">multilaminar epithelium morph</rdfs:label>
+  <owl:equivalentClass>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://x.org#has_part"/>
+      <owl:someValuesFrom>
+        <rdf:Description>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CARO_0000069"/>
+            <owl:Restriction>
+              <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/CARO#has_quality"/>
+              <owl:someValuesFrom rdf:resource="http://x.org#morph"/>
+            </owl:Restriction>
+          </owl:intersectionOf>
+        </rdf:Description>
+      </owl:someValuesFrom>
+    </owl:Restriction>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="http://x.org#unilaminar%20epithelium-morph">
+  <rdfs:label rdf:datatype="&xsd;string">unilaminar epithelium morph</rdfs:label>
+  <owl:equivalentClass>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://x.org#has_part"/>
+      <owl:someValuesFrom>
+        <rdf:Description>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CARO_0000073"/>
+            <owl:Restriction>
+              <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/CARO#has_quality"/>
+              <owl:someValuesFrom rdf:resource="http://x.org#morph"/>
+            </owl:Restriction>
+          </owl:intersectionOf>
+        </rdf:Description>
+      </owl:someValuesFrom>
+    </owl:Restriction>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="http://x.org#atypical%20epithelium-morph">
+  <rdfs:label rdf:datatype="&xsd;string">atypical epithelium morph</rdfs:label>
+  <owl:equivalentClass>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://x.org#has_part"/>
+      <owl:someValuesFrom>
+        <rdf:Description>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CARO_0000071"/>
+            <owl:Restriction>
+              <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/CARO#has_quality"/>
+              <owl:someValuesFrom rdf:resource="http://x.org#morph"/>
+            </owl:Restriction>
+          </owl:intersectionOf>
+        </rdf:Description>
+      </owl:someValuesFrom>
+    </owl:Restriction>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="http://x.org#simple%20squamous%20epithelium-morph">
+  <rdfs:label rdf:datatype="&xsd;string">simple squamous epithelium morph</rdfs:label>
+  <owl:equivalentClass>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://x.org#has_part"/>
+      <owl:someValuesFrom>
+        <rdf:Description>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CARO_0000070"/>
+            <owl:Restriction>
+              <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/CARO#has_quality"/>
+              <owl:someValuesFrom rdf:resource="http://x.org#morph"/>
+            </owl:Restriction>
+          </owl:intersectionOf>
+        </rdf:Description>
+      </owl:someValuesFrom>
+    </owl:Restriction>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="http://x.org#simple%20cuboidal%20epithelium-morph">
+  <rdfs:label rdf:datatype="&xsd;string">simple cuboidal epithelium morph</rdfs:label>
+  <owl:equivalentClass>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://x.org#has_part"/>
+      <owl:someValuesFrom>
+        <rdf:Description>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CARO_0000067"/>
+            <owl:Restriction>
+              <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/CARO#has_quality"/>
+              <owl:someValuesFrom rdf:resource="http://x.org#morph"/>
+            </owl:Restriction>
+          </owl:intersectionOf>
+        </rdf:Description>
+      </owl:someValuesFrom>
+    </owl:Restriction>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="http://x.org#simple%20columnar%20epithelium-morph">
+  <rdfs:label rdf:datatype="&xsd;string">simple columnar epithelium morph</rdfs:label>
+  <owl:equivalentClass>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="http://x.org#has_part"/>
+      <owl:someValuesFrom>
+        <rdf:Description>
+          <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CARO_0000068"/>
+            <owl:Restriction>
+              <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/CARO#has_quality"/>
+              <owl:someValuesFrom rdf:resource="http://x.org#morph"/>
+            </owl:Restriction>
+          </owl:intersectionOf>
+        </rdf:Description>
+      </owl:someValuesFrom>
+    </owl:Restriction>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="http://x.org#morphology">
+  <rdfs:label xml:lang="en">morphology</rdfs:label>
+</owl:Class>
+
+<owl:ObjectProperty rdf:about="http://x.org#has_part">
+  <rdfs:label xml:lang="en">has_part</rdfs:label>
+</owl:ObjectProperty>
+
+<owl:Class rdf:about="http://purl.obolibrary.org/obo/CARO_0000069"/>
+
+<owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/CARO#has_quality"/>
+
+<owl:Class rdf:about="http://purl.obolibrary.org/obo/CARO_0000073"/>
+
+<owl:Class rdf:about="http://purl.obolibrary.org/obo/CARO_0000071"/>
+
+<owl:Class rdf:about="http://purl.obolibrary.org/obo/CARO_0000070"/>
+
+<owl:Class rdf:about="http://purl.obolibrary.org/obo/CARO_0000067"/>
+
+<owl:Class rdf:about="http://purl.obolibrary.org/obo/CARO_0000068"/>
+
+</rdf:RDF>
